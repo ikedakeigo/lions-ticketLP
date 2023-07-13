@@ -3,6 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- =========カルーセル＝＝＝＝＝＝＝＝ -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- ＝＝＝＝＝＝＝カルーセル＝＝＝＝＝＝ -->
+
+  <script src="/assets/js/main.js"></script>
+
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
   <title>Document</title>
 </head>
 <body>
@@ -10,86 +24,80 @@
 
     <main class="lt-wrap">
       <div class="lt-container">
-        <div class="lt-inner">
 
           <section class="lt-topArea">
-            <div class="lt-sliderArea slick-slider">
-              <div class="slick-slide">
-                <img src="" alt="">
+
+            <div class="lt-inner">
+              <div class="lt-sliderArea slick-slider">
+                <div class="slick-slide mv_slideHeght">
+                  <img src="/assets/images/common/slider01.jpg" alt="">
+                </div>
+                <div class="slick-slide mv_slideHeght">
+                  <img src="/assets/images/common/slider01.jpg" alt="">
+                </div>
+                <div class="slick-slide mv_slideHeght">
+                  <img src="/assets/images/common/slider01.jpg" alt="">
+                </div>
               </div>
-            </div>
-            <div class="lt-btnArea">
-              <div class="lt-btnArea__inner">
-                <div class="lt-btnArea__item">
-                  <a href="" class="lt-btnArea__link">
-                    <span>イベントカレンダーはこちら</span>
-                  </a>
+
+              <div class="lt-btnArea ">
+                <div class="lt-btnArea__inner">
+                  <div class="lt-btnArea__item">
+                    <a href="" class="lt-btnArea__link">
+                      <span>イベントカレンダーはこちら</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
 
           <section class="lt-eventArea">
-            <article class="lt-eventArea__wrap">
-
-              <div class="lt-titleArea">
-                <h2 class="lt-mainTitle">SPECIAL EVENT</h2>
-                <h3 class="lt-subTitle">
-                  <span>スペシャルイベント</span>
-                </h3>
-              </div>
-
-              <p class="lt-mainText">
-                ファンのみなさまが楽しめるようなイベントが盛りだくさん！<br>
-                家族や友人を誘って素敵な時間を共有しよう！<br>
-                最新のスペシャルイベントはこちらからチェック！
-              </p>
-
-              <div class="lt-eventArea__slider">
-                <div class="lt-eventArea__sliderInner slick-slider">
-
-                  <div class="slick-slide">
-                    <a href="" class="lt-eventArea__link">
-                      <div class="lt-eventArea__img">
-                        <img src="" alt="">
-                      </div>
-                      <div class="lt-eventArea__text">
-                        <h3 class="lt-eventArea__title">
-                          ライオンズ×『幻日のヨハネ -SUNSHINE in the MIRROR-』
-                        </h3>
-                        <p class="lt-eventArea__info">
-                          ラブライブ！シリーズ作品とのコラボイベントを開催！
-                        </p>
-                      </div>
-                    </a>
-                  </div>
-
-                  <div class="slick-slide">
-                    <a href="" class="lt-eventArea__link">
-                      <div class="lt-eventArea__img">
-                        <img src="" alt="">
-                      </div>
-                      <div class="lt-eventArea__text">
-                        <h3 class="lt-eventArea__title">
-                          ライオンズ×『幻日のヨハネ -SUNSHINE in the MIRROR-』
-                        </h3>
-                        <p class="lt-eventArea__info">
-                          ラブライブ！シリーズ作品とのコラボイベントを開催！
-                        </p>
-                      </div>
-                    </a>
-                  </div>
-
+            <div class="lt-inner">
+              <article class="lt-eventArea__wrap">
+                <div class="lt-titleArea">
+                  <h2 class="lt-mainTitle">
+                    <img src="/assets/images/common/event-title.png" alt="">
+                  </h2>
+                  <h3 class="lt-subTitle">
+                    <span>スペシャルイベント</span>
+                  </h3>
                 </div>
-              </div>
+                <p class="lt-mainText">
+                  ファンのみなさまが楽しめるようなイベントが盛りだくさん！<br>
+                  家族や友人を誘って素敵な時間を共有しよう！<br>
+                  最新のスペシャルイベントはこちらからチェック！
+                </p>
+                <div class="lt-eventArea__slider">
+                  <div class="lt-eventArea__sliderInner slick-slider">
 
-              <div class="lt-eventArea__btn">
-                <a href="" class="lt-btn">
-                  <span>その他のスペシャルイベントはこちら</span>
-                </a>
-              </div>
+                    <div class="slick-slide">
+                      <a href="" class="lt-eventArea__link">
+                        <div class="lt-eventArea__img">
+                          <img src="/assets/images/common/event_slider01.jpg" alt="">
+                        </div>
+                        <div class="lt-eventArea__text">
+                          <h3 class="lt-eventArea__title">
+                            ライオンズ×『幻日のヨハネ -SUNSHINE in the MIRROR-』
+                          </h3>
+                          <p class="lt-eventArea__info">
+                            ラブライブ！シリーズ作品とのコラボイベントを開催！
+                          </p>
+                          <div class="lt-eventArea__textBtn"></div>
+                        </div>
+                      </a>
+                    </div>
 
-            </article>
+
+                  </div>
+                </div>
+                <div class="lt-eventArea__btn">
+                  <a href="" class="lt-btn">
+                    <span>その他のスペシャルイベントはこちら</span>
+                  </a>
+                </div>
+              </article>
+            </div>
           </section>
 
           <section class="lt-goodsArea">
@@ -283,10 +291,12 @@
               </div>
             </article>
           </section>
-        </div>
+
       </div>
     </main>
 
   </div>
+
+
 </body>
 </html>

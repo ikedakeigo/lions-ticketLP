@@ -1,0 +1,188 @@
+@use "base" as *;
+
+/*===================================
+ * topArea
+===================================*/
+
+.lt-topArea{
+  background-image: url('../images/common/lt-topbg-pc.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.lt-sliderArea{
+
+}
+
+
+.lt-btnArea{
+  background-image: url('../images/common/lt-btnBg.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+  padding-top: 130px;
+  padding-bottom: 100px;
+  &__inner{
+
+  }
+
+  &__item{
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    border-radius: 40px;
+    background-color: #FFDD00;
+    box-shadow: 0px 4px 0px 1px  #001F4B;
+  }
+
+  &__link{
+    color: #001F4B;
+    font-weight: 700;
+  }
+}
+
+
+/*===================================
+ * slider
+===================================*/
+.slick-slider{
+  @include mq(lg){
+    margin-top: 100px;
+  }
+  @include mq(sm){
+    width: 90%;
+  }
+}
+
+.slick-slide {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.mv_slideHeght{
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  @include mq(sm){
+    height: 400px !important;
+  }
+}
+
+.slick-slide {
+  @include mq(lg){
+    margin: 20px;
+  }
+}
+
+.slick-slide img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.slick-dots{
+  display: none !important;
+}
+
+
+/*===================================
+ * eventArea
+===================================*/
+
+.lt-eventArea{
+  background-image: url('../images/common/event-bg.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+  &__wrap{
+
+  }
+
+  &__slider{
+
+  }
+
+  &__sliderInner{
+
+  }
+
+  &__link{
+    width: 390px;
+    display: inline-block;
+  }
+
+  &__img{
+    width: auto;
+    height: 217px;
+    overflow: hidden;
+
+    & img{
+      width: 100%;
+  height: 100%;
+  object-fit: cover;
+    }
+  }
+
+  &__text{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 24px;
+    padding-bottom: 50px;
+    font-size: 22px;
+    border-top: 6px solid $color-na;
+    position: relative;
+    background-color: $color-white;
+  }
+
+  &__title{
+    margin: 0;
+    font-weight: 500;
+    color: #000;
+  }
+
+  &__info{
+    margin-top: 10px;
+    color: #666;
+  }
+
+  &__textBtn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateX(50%);
+    width: 64px;
+    height: 64px;
+    background-image: url('../images/common/lt-arrowBox.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__btn{
+    text-align: center;
+    background-color: #EA3B18;
+    width: 450px;
+    border-radius: 20px 0 20px 0;
+    padding: 28px 20px;
+    box-shadow: 0px 6px 0px 2px #8C230E;
+    margin: 0 auto;
+    & .lt-btn{
+      & span{
+        font-size: 22px;
+        font-weight: 700;
+        color: $color-white;
+
+      }
+    }
+  }
+}
