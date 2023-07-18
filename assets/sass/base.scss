@@ -79,7 +79,9 @@ section{
 $color-white: #fff;
 $color-blue: #0269B8;
 $color-na: #002352;
-
+$color-green: #00A603;
+$color-lightBlue: #009BD9;
+$color-yellow: #FFCC00;
 /*===================================
  * text
 ===================================*/
@@ -90,6 +92,16 @@ $color-na: #002352;
   font-weight: 500;
 
   margin: 50px 0;
+
+  &__white{
+    color: $color-white;
+    font-size: 22px;
+    line-height: calc(44px / 22px);
+    text-align: center;
+    font-weight: 500;
+
+    margin: 50px 0;
+  }
 }
 /*===================================
  * title
@@ -112,6 +124,23 @@ $color-na: #002352;
     background-color: $color-blue;
     font-weight: 700;
     color: $color-white;
+    font-size: 38px;
+  }
+
+  &.yellow {
+    & span {
+      background-color: $color-yellow;
+    }
+  }
+}
+
+.lt-subTitle_white{
+  & span {
+    padding: 15px 30px;
+    border-radius: 32.247px;
+    background-color: $color-white;
+    font-weight: 700;
+    color: $color-na;
     font-size: 38px;
   }
 }

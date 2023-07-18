@@ -1,5 +1,13 @@
 @use "base" as *;
 
+#lt-wrapper{
+  // background-image: url('../images/common/lt-topbg-pc.png');
+  // background-position: center center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // height: 100%;
+  // width: 100%;
+}
 /*===================================
  * topArea
 ===================================*/
@@ -52,44 +60,117 @@
 /*===================================
  * slider
 ===================================*/
-.slick-slider{
-  @include mq(lg){
-    margin-top: 100px;
-  }
-  @include mq(sm){
-    width: 90%;
-  }
+// .slick-slider{
+//   @include mq(lg){
+//     margin-top: 100px;
+//   }
+//   @include mq(sm){
+//     width: 90%;
+//   }
+// }
+
+// .slick-slide {
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: center;
+
+// }
+
+// .mv_slideHeght{
+//   padding: 20px;
+//   background-color: #fff;
+//   border-radius: 20px;
+//   @include mq(sm){
+//     height: 400px !important;
+//   }
+// }
+
+// .slick-slide {
+//   @include mq(lg){
+//     margin: 20px;
+//   }
+// }
+
+// .slick-slide img {
+//   width: 100%;
+//   border-radius: 10px;
+// }
+
+// .slick-dots{
+//   display: none !important;
+// }
+
+
+.swiper-container {
+  overflow: visible;
 }
 
-.slick-slide {
-  background-size: cover;
+.swiper-wrapper{
+  align-items: center;
+}
+
+.swiper-slide {
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-
+  width: 80%;
+  flex-shrink: inherit;
 }
 
-.mv_slideHeght{
+.mv_slideHeght {
   padding: 20px;
   background-color: #fff;
   border-radius: 20px;
-  @include mq(sm){
-    height: 400px !important;
+  // height: 400px;
+}
+
+.swiper-slide-active {
+  position: relative;
+  & img{
+    height: 450px;
   }
 }
 
-.slick-slide {
-  @include mq(lg){
-    margin: 20px;
-  }
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: '';
+  background-image: url('../images/common/icon_redArow.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  // transform: translateY(-50%);
 }
 
-.slick-slide img {
-  width: 100%;
+.swiper-button-prev:after {
+  transform: rotate(180deg);
+}
+
+.swiper-button-prev{
+  left: 30.5%;
+}
+
+.swiper-button-next{
+  right: 30.5%;
+}
+
+.slide-nav__btn{
+  top: 35% !important;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+
+.swiper-slide img {
+  // width: 100%;
   border-radius: 10px;
 }
 
-.slick-dots{
-  display: none !important;
+.swiper-pagination{
+
 }
 
 
@@ -98,21 +179,44 @@
 ===================================*/
 
 .lt-eventArea{
-  background-image: url('../images/common/event-bg.png');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 100%;
-  width: 100%;
+  // background-image: url('../images/common/event-bg.png');
+  // background-position: center center;
+  // background-repeat: no-repeat;
+  // background-size: contain;
+  // height: 100%;
+  // width: 100%;
   &__wrap{
 
   }
 
   &__slider{
+    position: relative;
+    &::before{
+      position: absolute;
+      top: 0;
+      left: 0;
+      // z-index: -1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      content: '';
+      background-image: url('../images/common/eventBg_gray.png');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
 
+    }
   }
 
   &__sliderInner{
+    gap: 7%;
+  }
+
+  &__slideBox{
+    &:nth-child(2n){
+      margin-bottom: 100px;
+    }
+
 
   }
 
@@ -183,6 +287,254 @@
         color: $color-white;
 
       }
+    }
+  }
+}
+
+/*===================================
+ * goodsArea
+===================================*/
+
+.lt-goodsArea{
+  padding-top: 120px;
+  background-image: url('../images/common/lt-goodsAreaBG.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+
+  &__content{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__goodsBtn{
+    background-image: url('../images/common/eventBtn01.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 513px;
+    width: 49%;
+    display: block;
+  }
+
+  &__ticketBtn{
+    background-image: url('../images/common/eventBtn01.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 513px;
+    width: 49%;
+    // margin-left: 40px;
+  }
+}
+
+/*===================================
+ * aboutArea
+===================================*/
+
+.lt-aboutArea{
+
+  &__wrap{
+    border: $color-lightBlue solid 6px;
+    padding: 54px 20px;
+    &:not(:last-child){
+      margin-bottom: 180px;
+    }
+
+    &.yellow{
+      border: $color-yellow solid 6px;
+    }
+  }
+
+  &__content{
+
+  }
+
+  &__items{
+    display: flex;
+    gap: 5%;
+    justify-content: space-evenly;
+  }
+
+  &__item{
+    width: 25.45833vw;
+    text-align: center;
+    &.yellow{
+      border: $color-yellow solid 2px;
+      padding: 25px;
+    }
+  }
+
+  &__link{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $color-lightBlue;
+    border-radius: 10px;
+
+    &.green{
+      background-color: $color-green;
+    }
+
+  }
+
+  &__img{
+    width: 100%;
+    margin: auto;
+
+    & picture{
+      display: block;
+      max-width: 100%;
+
+      & img{
+        border-radius: 10px 10px 0 0 ;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__text{
+    font-weight: bold;
+    color: $color-white;
+    padding: 30px;
+    position: relative;
+    font-size: 22px;
+
+    &::before{
+      content: '';
+      position: absolute;
+      bottom: 25%;
+      right: 0;
+      transform: translate(-20%, 50%);
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-image: url('../images/common/sankaku-yazirusi.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__textKids{
+    font-weight: bold;
+    text-align: left;
+    padding: 10px 0;
+    font-size: 22px;
+  }
+
+  &__title{
+
+  }
+
+  &__linkBox{
+    // max-width: 370px;
+  }
+
+  &__btn{
+    text-align: center;
+    background-color: #EA3B18;
+    border-radius: 20px 0 20px 0;
+    padding: 28px 20px;
+    box-shadow: 0px 6px 0px 2px #8C230E;
+    & .lt-btn{
+      & span{
+        font-size: 22px;
+        font-weight: 700;
+        color: $color-white;
+
+      }
+    }
+  }
+}
+
+/*===================================
+ * infoArea
+===================================*/
+
+.lt-infoArea{
+  padding-top: 120px;
+  background-image: url('../images/common/lt-infoAreaBG.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+
+  &__wrap{
+
+  }
+
+  &__content{
+
+  }
+
+  &__items{
+    display: flex;
+    gap: 5.13889vw;
+    justify-content: center;
+  }
+
+  &__item{
+    // width: 16.45833vw;
+  }
+
+  &__link{
+
+  }
+
+  &__img{
+    width: 18vw;
+    height: 18vw;
+    padding: 0.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-blue;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    position: relative;
+    &::before{
+      content: url('../images/common/icon_redArow.svg');
+      position: absolute;
+      bottom: 0;
+      right: 25%;
+      transform: translate(50%, -50%);
+      height: 60px;
+      width: 60px;
+    }
+
+    & picture{
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      & img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__text{
+
+  }
+
+  &__title{
+
+    color: $color-white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 22px;
+    & span{
+      padding: 10px 40px;
+      border-radius: 30px;
+      background-color: $color-na;
     }
   }
 }

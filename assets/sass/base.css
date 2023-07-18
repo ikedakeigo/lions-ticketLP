@@ -61,6 +61,14 @@ section {
   font-weight: 500;
   margin: 50px 0;
 }
+.lt-mainText__white {
+  color: #fff;
+  font-size: 22px;
+  line-height: 2;
+  text-align: center;
+  font-weight: 500;
+  margin: 50px 0;
+}
 
 /*===================================
  * title
@@ -79,6 +87,18 @@ section {
   background-color: #0269B8;
   font-weight: 700;
   color: #fff;
+  font-size: 38px;
+}
+.lt-subTitle.yellow span {
+  background-color: #FFCC00;
+}
+
+.lt-subTitle_white span {
+  padding: 15px 30px;
+  border-radius: 32.247px;
+  background-color: #fff;
+  font-weight: 700;
+  color: #002352;
   font-size: 38px;
 }
 /*# sourceMappingURL=base.css.map */
