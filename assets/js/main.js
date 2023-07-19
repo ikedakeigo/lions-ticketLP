@@ -30,7 +30,7 @@ $(document).ready(function () {
     loop: true,
     centeredSlides: true,
     spaceBetween: 16,
-    autoplay:{
+    autoplay: {
       delay: 4000,
     },
 
@@ -41,22 +41,39 @@ $(document).ready(function () {
   });
 
   var swiper = new Swiper(".event-slide", {
-    slidesPerView: "auto",
-    loop: true,
-    centeredSlides: true,
-    // spaceBetween: 16,
-    autoplay:{
-      delay: 4000,
-    },
     slidesPerView: 2,
+    // loop: true,
+    centeredSlides: true,
+    autoplay: {
+      delay: 14000,
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
     pagination: {
       el: ".swiper-pagination",
+      type: "bullets",
       clickable: true,
+      dynamicBullets: true,
+      dynamicMainBullets: 1,
+    },
+    breakpoints: {
+      960: {
+        slidesPerView: 1,
+      },
+    },
+
+    on: {
+      slideChangeTransitionEnd: function () {
+        var slides = document.querySelectorAll(".swiper-slide");
+        slides.forEach((slide) => {
+          slide.classList.remove("active-slide");
+        });
+
+        var activeSlide = slides[this.realIndex + 1]; // +1 to account for cloned slide in loop mode
+        activeSlide.classList.add("active-slide");
+      },
     },
   });
-
 });

@@ -3,7 +3,7 @@ $breakpoints: (
 //キー 値
 // 'xxs': 'screen and (max-width: 328px)',
 'xs': 'screen and (max-width: 599px)',
-'sm': 'screen and (max-width: 767px)', //767px以下（スマホ）用の表示
+'sm': 'screen and (max-width: 960px)', //767px以下（スマホ）用の表示
 'md': 'screen and (min-width: 768px)', //768px以上（タブレット・PC）用の表示
 'lg': 'screen and (min-width: 1024px)',
 ) !default;
@@ -65,11 +65,33 @@ a{
 .lt-inner{
   max-width: 1010px;
   margin: auto;
+
+  @include mq(sm){
+    max-width: 680px;
+  }
 }
 
 section{
+  padding-top: 120px;
   padding-bottom: 120px;
-  margin-bottom: 120px;
+  @include mq(sm){
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.is-pc{
+  display: block;
+  @include mq(sm){
+    display: none;
+  }
+}
+
+.is-sp{
+  display: none;
+  @include mq(sm){
+    display: block;
+  }
 }
 
 /*===================================
@@ -89,18 +111,26 @@ $color-yellow: #FFCC00;
   font-size: 22px;
   line-height: calc(44px / 22px);
   text-align: center;
-  font-weight: 500;
+  font-weight: 700;
 
   margin: 50px 0;
-
+  @include mq(sm){
+    font-size: 18px;
+    line-height: 1.5;
+  }
   &__white{
     color: $color-white;
     font-size: 22px;
     line-height: calc(44px / 22px);
     text-align: center;
-    font-weight: 500;
+    font-weight: 700;
 
     margin: 50px 0;
+    @include mq(sm){
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 200px;
+    }
   }
 }
 /*===================================
@@ -114,10 +144,16 @@ $color-yellow: #FFCC00;
 .lt-mainTitle{
   & img {
     max-width: 600px;
+    @include mq(sm){
+      max-width: 300px;
+    }
   }
 }
 
 .lt-subTitle{
+  @include mq(sm){
+
+  }
   & span {
     padding: 15px 30px;
     border-radius: 32.247px;
@@ -125,6 +161,10 @@ $color-yellow: #FFCC00;
     font-weight: 700;
     color: $color-white;
     font-size: 38px;
+    @include mq(sm){
+      font-size: 22px;
+      padding: 10px 20px;
+    }
   }
 
   &.yellow {
@@ -142,5 +182,9 @@ $color-yellow: #FFCC00;
     font-weight: 700;
     color: $color-na;
     font-size: 38px;
+    @include mq(sm){
+      font-size: 20px;
+      padding: 10px 20px;
+    }
   }
 }

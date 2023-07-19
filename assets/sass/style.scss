@@ -35,6 +35,12 @@
   width: 100%;
   padding-top: 130px;
   padding-bottom: 100px;
+  @include mq(sm){
+    background-image: url('../images/common/lt-btnBg_SP.png');
+    // width: 70vw;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
   &__inner{
 
   }
@@ -48,11 +54,19 @@
     border-radius: 40px;
     background-color: #FFDD00;
     box-shadow: 0px 4px 0px 1px  #001F4B;
+
+    @include mq(sm){
+      width: 60vw;
+      padding: 20px;
+    }
   }
 
   &__link{
     color: #001F4B;
     font-weight: 700;
+    @include mq(sm){
+      // font-size: 28px;
+    }
   }
 }
 
@@ -60,46 +74,6 @@
 /*===================================
  * slider
 ===================================*/
-// .slick-slider{
-//   @include mq(lg){
-//     margin-top: 100px;
-//   }
-//   @include mq(sm){
-//     width: 90%;
-//   }
-// }
-
-// .slick-slide {
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   background-position: center;
-
-// }
-
-// .mv_slideHeght{
-//   padding: 20px;
-//   background-color: #fff;
-//   border-radius: 20px;
-//   @include mq(sm){
-//     height: 400px !important;
-//   }
-// }
-
-// .slick-slide {
-//   @include mq(lg){
-//     margin: 20px;
-//   }
-// }
-
-// .slick-slide img {
-//   width: 100%;
-//   border-radius: 10px;
-// }
-
-// .slick-dots{
-//   display: none !important;
-// }
-
 
 .swiper-container {
   overflow: visible;
@@ -110,11 +84,15 @@
 }
 
 .swiper-slide {
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   width: 80%;
-  flex-shrink: inherit;
+  flex-shrink: none;
+
+  @include mq(sm){
+    width: 100%;
+  }
 }
 
 .mv_slideHeght {
@@ -128,6 +106,9 @@
   position: relative;
   & img{
     height: 450px;
+    @include mq(sm){
+      height: 300px;
+    }
   }
 }
 
@@ -143,6 +124,11 @@
   position: absolute;
   top: 50%;
   // transform: translateY(-50%);
+
+  @include mq(sm){
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .swiper-button-prev:after {
@@ -173,48 +159,101 @@
 
 }
 
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: red;
+}
+
+.swiper-pagination-bullet-active {
+  width: 16px;
+  height: 16px;
+  background: red;
+}
+.active-slide {
+  margin-bottom: 100px !important;
+}
 
 /*===================================
  * eventArea
 ===================================*/
 
+.eventSP-title{
+  position: relative;
+  text-align: center;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 140px;
+    height: 165px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    @include mq(sm){
+      width: 60px;
+      height: 80px;
+    }
+  }
+
+  &::before {
+    background-image: url('../images/common/eventTitle-icon01.png');
+    left: -30px;
+    transform: translateY(-50%);
+    @include mq(sm){
+      left: -10px;
+    }
+  }
+
+  &::after {
+    background-image: url('../images/common/eventTitle-icon02.png');
+    right: -30px;
+    transform: translateY(-50%);
+    @include mq(sm){
+      right: -10px;
+    }
+  }
+
+  .eventSP-title {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+}
+
 .lt-eventArea{
-  // background-image: url('../images/common/event-bg.png');
-  // background-position: center center;
-  // background-repeat: no-repeat;
-  // background-size: contain;
-  // height: 100%;
-  // width: 100%;
+  background-image: url('../images/common/eventBG01.png'), url('../images/common/eventBG02.png');
+  background-position: center top 10px, center bottom -300px;
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, contain;
+  height: 100%;
+  width: 100%;
+  @include mq(sm){
+    background-image: url('../images/common/eventBG01_SP.png'), url('../images/common/eventBG02_SP.png');
+    background-size: contain, contain;
+  }
   &__wrap{
 
   }
 
   &__slider{
-    position: relative;
-    &::before{
-      position: absolute;
-      top: 0;
-      left: 0;
-      // z-index: -1;
-      display: block;
-      width: 100%;
-      height: 100%;
-      content: '';
-      background-image: url('../images/common/eventBg_gray.png');
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: contain;
-
-    }
+    // margin-top: 140px;
   }
 
   &__sliderInner{
-    gap: 7%;
+    gap: 2%;
   }
 
   &__slideBox{
+    @include mq(sm){
+      width: 80% !important;
+      margin: 0 auto;
+    }
     &:nth-child(2n){
       margin-bottom: 100px;
+      @include mq(sm){
+        margin-bottom: 0;
+      }
     }
 
 
@@ -223,6 +262,9 @@
   &__link{
     width: 390px;
     display: inline-block;
+    @include mq(sm){
+      width: 100%;
+    }
   }
 
   &__img{
@@ -232,8 +274,8 @@
 
     & img{
       width: 100%;
-  height: 100%;
-  object-fit: cover;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -246,6 +288,9 @@
     border-top: 6px solid $color-na;
     position: relative;
     background-color: $color-white;
+    @include mq(sm){
+      font-size: 16px;
+    }
   }
 
   &__title{
@@ -280,12 +325,17 @@
     padding: 28px 20px;
     box-shadow: 0px 6px 0px 2px #8C230E;
     margin: 0 auto;
+    @include mq(sm){
+      width: 80%;
+    }
     & .lt-btn{
       & span{
         font-size: 22px;
         font-weight: 700;
         color: $color-white;
-
+        @include mq(sm){
+          font-size: 16px;
+        }
       }
     }
   }
@@ -294,6 +344,36 @@
 /*===================================
  * goodsArea
 ===================================*/
+
+.goods-title{
+  position: relative;
+  text-align: center;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 284px;
+    height: 191px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+
+  &::after {
+    background-image: url('../images/common/goddsTitle-icon01.png');
+    right: -25%;
+    transform: translateY(-50%);
+    @include mq(sm){
+      display: none;
+    }
+  }
+
+  .eventSP-title {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+}
 
 .lt-goodsArea{
   padding-top: 120px;
@@ -307,26 +387,56 @@
   &__content{
     display: flex;
     justify-content: space-between;
+    margin: 0 calc(50% - 50vw);
+	  width: 100vw;
+    @include mq(sm){
+      display: block;
+    }
   }
 
   &__goodsBtn{
-    background-image: url('../images/common/eventBtn01.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 513px;
     width: 49%;
-    display: block;
+    // background-image: url('../images/common/goddsTitle-icon02.png');
+    // background-position: top;
+    // background-repeat: no-repeat;
+    // background-size: contain;
+    position: relative;
+    @include mq(sm){
+      width: 100%;
+      margin-bottom: 20px;
+      display: block;
+    }
+    &::before{
+      position: absolute;
+      top: -25%;
+      left: 25%;
+      transform: translate(-50%, -45%);
+      content: '';
+      width: 230px;
+      height: 404px;
+      background-image: url('../images/common/goddsTitle-icon02.png');
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: contain;
+      @include mq(sm){
+        width: 150px;
+        height: 300px;
+        top: -25%;
+        transform: translate(-50%, -48%);
+      }
+    }
+
+    &::after {
+      @include mq(sm){
+        background-image: url('../images/common/goddsTitle-icon01.png');
+        right: 0;
+        transform: translate(50%, -50%);
+      }
+    }
   }
 
   &__ticketBtn{
-    background-image: url('../images/common/eventBtn01.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 513px;
     width: 49%;
-    // margin-left: 40px;
   }
 }
 
@@ -334,17 +444,161 @@
  * aboutArea
 ===================================*/
 
+.about-title{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -70%);
+}
+
 .lt-aboutArea{
+  background-image: url('../images/common/aboutBg.png');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  margin-top: 120px;
+
+  &__another{
+    &::before{
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -25%);
+      content: '';
+      width: 230px;
+      height: 404px;
+      background-image: url('../images/common/about_R-icon02.png');
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: contain;
+      @include mq(sm){
+        width: 150px;
+        height: 300px;
+      }
+    }
+    &::after{
+      position: absolute;
+      top: 0;
+      right: -25%;
+      transform: translate(-25%, -35%);
+      content: '';
+      width: 230px;
+      height: 404px;
+      background-image: url('../images/common/about_R-icon01.png');
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: contain;
+      @include mq(sm){
+        width: 100px;
+        height: 250px;
+        right: -15%;
+        top: 30%;
+      }
+    }
+
+    &--yellow{
+      &::before{
+        position: absolute;
+        top: 25%;
+        left: -8%;
+        transform: translate(-50%, -25%);
+        content: '';
+        width: 230px;
+        height: 404px;
+        background-image: url('../images/common/about_K-icon02.png');
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        @include mq(sm){
+          width: 100px;
+          height: 250px;
+          top: 0;
+          left: 5%;
+        }
+      }
+
+
+      &::after{
+        position: absolute;
+        top: 0;
+        right: -25%;
+        transform: translate(-50%, -25%);
+        content: '';
+        width: 230px;
+        height: 404px;
+        background-image: url('../images/common/about_K-icon01.png');
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        @include mq(sm){
+          width: 100px;
+          height: 250px;
+          right: -20%;
+          top: 2%;
+        }
+      }
+
+      &--end{
+        &::before{
+          position: absolute;
+          bottom: 0;
+          left: -8%;
+          transform: translate(-50%,50%);
+          content: '';
+          width: 230px;
+          height: 404px;
+          background-image: url('../images/common/about_K-icon03.png');
+          background-position: top;
+          background-repeat: no-repeat;
+          background-size: contain;
+          z-index: -1000;
+        }
+      }
+    }
+  }
 
   &__wrap{
+    box-sizing:border-box;
+    position: relative;
     border: $color-lightBlue solid 6px;
+	  // outline-offset: -8px;
     padding: 54px 20px;
+    border-radius: 20px;
+    background-image: url('../images/common/lt-aboutAreaR.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    & .lt-mainText{
+      @include mq(sm){
+        margin-top: 0;
+      }
+    }
+    &::before {
+      content: "";
+      width: 630px;
+      height: 10px;
+      background: #FFF;
+      display: inline-block;
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      @include mq(sm){
+        width: 250px;
+      }
+    }
+
+
     &:not(:last-child){
       margin-bottom: 180px;
     }
 
     &.yellow{
       border: $color-yellow solid 6px;
+      background-image: url('../images/common/lt-aboutAreaK.png');
     }
   }
 
@@ -354,16 +608,31 @@
 
   &__items{
     display: flex;
-    gap: 5%;
+    // gap: 5%;
     justify-content: space-evenly;
+    @include mq(sm){
+      display: block;
+    }
   }
 
   &__item{
-    width: 25.45833vw;
+    width: 45%;
     text-align: center;
+    @include mq(sm){
+      width: 100%;
+      &:not(:last-child){
+        margin-bottom: 20px;
+      }
+    }
     &.yellow{
       border: $color-yellow solid 2px;
       padding: 25px;
+      width: 40%;
+      border-radius: 20px;
+      background-color: $color-white;
+      @include mq(sm){
+        width: 80%;
+      }
     }
   }
 
@@ -402,6 +671,9 @@
     padding: 30px;
     position: relative;
     font-size: 22px;
+    @include mq(sm){
+      padding: 20px;
+    }
 
     &::before{
       content: '';
@@ -448,6 +720,17 @@
       }
     }
   }
+
+  & .lt-inner{
+    @include mq(sm){
+      padding: 0 15px;
+    }
+  }
+}
+
+.yellow-img{
+  height: 100px;
+  object-fit: contain;
 }
 
 /*===================================
@@ -473,12 +756,16 @@
 
   &__items{
     display: flex;
-    gap: 5.13889vw;
-    justify-content: center;
+    // gap: 5.13889vw;
+    justify-content: space-between;
+    gap: 2%;
+    @include mq(sm){
+      display: block;
+    }
   }
 
   &__item{
-    // width: 16.45833vw;
+    width: 100%;
   }
 
   &__link{
@@ -486,9 +773,9 @@
   }
 
   &__img{
-    width: 18vw;
-    height: 18vw;
-    padding: 0.5vw;
+    width: 310px;
+    height: 310px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -496,12 +783,15 @@
     border-radius: 50%;
     margin-bottom: 20px;
     position: relative;
+    @include mq(sm){
+      margin: 30px auto;
+    }
     &::before{
       content: url('../images/common/icon_redArow.svg');
       position: absolute;
       bottom: 0;
-      right: 25%;
-      transform: translate(50%, -50%);
+      right:  0;
+      transform: translate(-25%, -50%);
       height: 60px;
       width: 60px;
     }
