@@ -188,3 +188,194 @@ $color-yellow: #FFCC00;
     }
   }
 }
+
+/*===================================
+ * slider
+===================================*/
+
+.swiper-container {
+  overflow: visible;
+  position: relative;
+  // overflow: hidden;
+  // margin: 0 calc(50% - 50vw); //inner要素か抜ける
+  // width: 100vw;
+
+}
+
+.swiper-wrapper{
+  align-items: center;
+  transition-timing-function: linear;
+}
+
+.swiper-slide {
+  width: 100%;
+  flex-shrink: 1;
+  opacity: 0.4;
+  // overflow: hidden;
+  transition: .7s;
+  transition: transform 0.6s;
+  @include mq(sm){
+    width: 100%;
+  }
+
+  & img{
+    display: inline; //念のため
+    width: auto; //念のため
+    max-width: 100%;
+    max-height: 100%;
+    align-self: center; //上下の中央揃え
+  }
+}
+
+.mv_slideHeght {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-sizing: border-box;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  height: 560px;
+  width: 850px;
+
+  @include mq(sm){
+    height: 300px;
+    max-width: 350px;
+  }
+
+    & img {
+      width: 100%;
+      height: -webkit-fill-available;
+      object-fit: cover;
+    }
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: '';
+  background-image: url('../images/common/icon_redArow.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+
+  @include mq(sm){
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.swiper-button-prev:after {
+  transform: rotate(180deg);
+}
+
+.swiper-button-prev{
+  left: 18%;
+  @include mq(sm){
+    left: 5%;
+  }
+}
+
+.swiper-button-next{
+  right: 18%;
+  @include mq(sm){
+    right: 5%;
+  }
+}
+
+.slide-nav__btn{
+  top: 45% !important;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+
+.swiper-slide img {
+  // width: 100%;
+  border-radius: 10px;
+}
+
+
+
+.swiper-pagination-bullet {
+  border-radius: inherit;
+  margin: 0 5px!important;
+  width: 54px;
+  height: 5px;
+  background: skyblue;
+  opacity: 0.19;
+}
+
+.swiper-pagination-bullet-active {
+  background: skyblue;
+  opacity: 1;
+}
+
+.active-slide {
+  // margin-bottom: 100px !important;
+}
+
+/*===================================
+ * envet-swiper pagination
+===================================*/
+.swiper-pagination{
+  position: relative;
+}
+.eventSwiper-button-prev:after,
+.eventSwiper-button-next:after {
+  content: '';
+  background-image: url('../images/common/icon_redArow.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  @include mq(sm){
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.eventSwiper-button-prev:after {
+  transform: rotate(180deg);
+}
+
+.eventSwiper-button-prev{
+  left: 18%;
+  @include mq(sm){
+    left: 5%;
+  }
+}
+
+.eventSwiper-button-next{
+  right: 18%;
+  @include mq(sm){
+    right: 5%;
+  }
+}
+
+.EventSlide-nav__btn{
+  bottom: 0 !important;
+  left: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+
+.event-swiper__pagination{
+  position: absolute;
+  bottom: -10% !important;
+  // transform: translateY(-50%) !important;
+}

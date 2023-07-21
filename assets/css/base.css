@@ -160,4 +160,207 @@ section {
     padding: 10px 20px;
   }
 }
+
+/*===================================
+ * slider
+===================================*/
+.swiper-container {
+  overflow: visible;
+  position: relative;
+}
+
+.swiper-wrapper {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+
+.swiper-slide {
+  width: 100%;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  opacity: 0.4;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  -webkit-transition: -webkit-transform 0.6s;
+  transition: -webkit-transform 0.6s;
+  transition: transform 0.6s;
+  transition: transform 0.6s, -webkit-transform 0.6s;
+}
+@media screen and (max-width: 960px) {
+  .swiper-slide {
+    width: 100%;
+  }
+}
+.swiper-slide img {
+  display: inline;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.mv_slideHeght {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 560px;
+  width: 850px;
+}
+@media screen and (max-width: 960px) {
+  .mv_slideHeght {
+    height: 300px;
+    max-width: 350px;
+  }
+}
+.mv_slideHeght img {
+  width: 100%;
+  height: -webkit-fill-available;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: "";
+  background-image: url("../images/common/icon_redArow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+}
+@media screen and (max-width: 960px) {
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.swiper-button-prev:after {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.swiper-button-prev {
+  left: 18%;
+}
+@media screen and (max-width: 960px) {
+  .swiper-button-prev {
+    left: 5%;
+  }
+}
+
+.swiper-button-next {
+  right: 18%;
+}
+@media screen and (max-width: 960px) {
+  .swiper-button-next {
+    right: 5%;
+  }
+}
+
+.slide-nav__btn {
+  top: 45% !important;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+
+.swiper-slide img {
+  border-radius: 10px;
+}
+
+.swiper-pagination-bullet {
+  border-radius: inherit;
+  margin: 0 5px !important;
+  width: 54px;
+  height: 5px;
+  background: skyblue;
+  opacity: 0.19;
+}
+
+.swiper-pagination-bullet-active {
+  background: skyblue;
+  opacity: 1;
+}
+
+/*===================================
+ * envet-swiper pagination
+===================================*/
+.swiper-pagination {
+  position: relative;
+}
+
+.eventSwiper-button-prev:after,
+.eventSwiper-button-next:after {
+  content: "";
+  background-image: url("../images/common/icon_redArow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+@media screen and (max-width: 960px) {
+  .eventSwiper-button-prev:after,
+  .eventSwiper-button-next:after {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.eventSwiper-button-prev:after {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.eventSwiper-button-prev {
+  left: 18%;
+}
+@media screen and (max-width: 960px) {
+  .eventSwiper-button-prev {
+    left: 5%;
+  }
+}
+
+.eventSwiper-button-next {
+  right: 18%;
+}
+@media screen and (max-width: 960px) {
+  .eventSwiper-button-next {
+    right: 5%;
+  }
+}
+
+.EventSlide-nav__btn {
+  bottom: 0 !important;
+  left: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+
+.event-swiper__pagination {
+  position: absolute;
+  bottom: -10% !important;
+}
 /*# sourceMappingURL=base.css.map */

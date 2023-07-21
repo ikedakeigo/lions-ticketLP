@@ -72,109 +72,6 @@
 
 
 /*===================================
- * slider
-===================================*/
-
-.swiper-container {
-  overflow: visible;
-}
-
-.swiper-wrapper{
-  align-items: center;
-}
-
-.swiper-slide {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 80%;
-  flex-shrink: none;
-
-  @include mq(sm){
-    width: 100%;
-  }
-}
-
-.mv_slideHeght {
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 20px;
-  // height: 400px;
-}
-
-.swiper-slide-active {
-  position: relative;
-  & img{
-    height: 450px;
-    @include mq(sm){
-      height: 300px;
-    }
-  }
-}
-
-
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  content: '';
-  background-image: url('../images/common/icon_redArow.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  top: 50%;
-  // transform: translateY(-50%);
-
-  @include mq(sm){
-    width: 40px;
-    height: 40px;
-  }
-}
-
-.swiper-button-prev:after {
-  transform: rotate(180deg);
-}
-
-.swiper-button-prev{
-  left: 30.5%;
-}
-
-.swiper-button-next{
-  right: 30.5%;
-}
-
-.slide-nav__btn{
-  top: 35% !important;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-}
-
-.swiper-slide img {
-  // width: 100%;
-  border-radius: 10px;
-}
-
-.swiper-pagination{
-
-}
-
-.swiper-pagination-bullet {
-  width: 8px;
-  height: 8px;
-  background: red;
-}
-
-.swiper-pagination-bullet-active {
-  width: 16px;
-  height: 16px;
-  background: red;
-}
-.active-slide {
-  margin-bottom: 100px !important;
-}
-
-/*===================================
  * eventArea
 ===================================*/
 
@@ -197,7 +94,7 @@
   }
 
   &::before {
-    background-image: url('../images/common/eventTitle-icon01.png');
+    background-image: url('../images/common/balloon_blue.png');
     left: -30px;
     transform: translateY(-50%);
     @include mq(sm){
@@ -206,7 +103,7 @@
   }
 
   &::after {
-    background-image: url('../images/common/eventTitle-icon02.png');
+    background-image: url('../images/common/balloon_orenge.png');
     right: -30px;
     transform: translateY(-50%);
     @include mq(sm){
@@ -223,7 +120,7 @@
 
 .lt-eventArea{
   background-image: url('../images/common/eventBG01.png'), url('../images/common/eventBG02.png');
-  background-position: center top 10px, center bottom -300px;
+  background-position: center top 10px, center bottom 0px;
   background-repeat: no-repeat, no-repeat;
   background-size: contain, contain;
   height: 100%;
@@ -242,12 +139,20 @@
 
   &__sliderInner{
     gap: 2%;
+    @include mq(sm){
+      gap: 5%;
+    }
   }
 
   &__slideBox{
     @include mq(sm){
-      width: 80% !important;
-      margin: 0 auto;
+      // width: 80% !important;
+      width: 300px !important;
+      // max-width: 480px !important;
+      // margin: 0 auto !important;
+      flex-shrink: 0;
+      margin-right: 0 !important;
+      // margin-left: auto !important;
     }
     &:nth-child(2n){
       margin-bottom: 100px;
@@ -268,14 +173,14 @@
   }
 
   &__img{
-    width: auto;
-    height: 217px;
-    overflow: hidden;
+    // width: auto;
+    // height: 217px;
+    // overflow: hidden;
 
     & img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      // width: 100%;
+      // height: 100%;
+      // object-fit: cover;
     }
   }
 
@@ -325,6 +230,7 @@
     padding: 28px 20px;
     box-shadow: 0px 6px 0px 2px #8C230E;
     margin: 0 auto;
+    margin-top: 100px;
     @include mq(sm){
       width: 80%;
     }
@@ -341,6 +247,8 @@
   }
 }
 
+
+
 /*===================================
  * goodsArea
 ===================================*/
@@ -349,20 +257,12 @@
   position: relative;
   text-align: center;
   &::after {
-    content: "";
+    content: url('../images/common/goods-and-tickets.png');
     position: absolute;
-    top: 50%;
-    width: 284px;
-    height: 191px;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
-
-  &::after {
-    background-image: url('../images/common/goddsTitle-icon01.png');
+    top: 0;
     right: -25%;
     transform: translateY(-50%);
+    scale: .5;
     @include mq(sm){
       display: none;
     }
@@ -387,7 +287,7 @@
   &__content{
     display: flex;
     justify-content: space-between;
-    margin: 0 calc(50% - 50vw);
+    margin: 0 calc(50% - 50vw); //inner要素か抜ける
 	  width: 100vw;
     @include mq(sm){
       display: block;
@@ -396,10 +296,6 @@
 
   &__goodsBtn{
     width: 49%;
-    // background-image: url('../images/common/goddsTitle-icon02.png');
-    // background-position: top;
-    // background-repeat: no-repeat;
-    // background-size: contain;
     position: relative;
     @include mq(sm){
       width: 100%;
@@ -408,29 +304,25 @@
     }
     &::before{
       position: absolute;
-      top: -25%;
+      top: -10%;
       left: 25%;
-      transform: translate(-50%, -45%);
-      content: '';
-      width: 230px;
-      height: 404px;
-      background-image: url('../images/common/goddsTitle-icon02.png');
-      background-position: top;
-      background-repeat: no-repeat;
-      background-size: contain;
+      transform: translate(-50%, -50%);
+      content: url('../images/common/230331_7297.png');
       @include mq(sm){
-        width: 150px;
-        height: 300px;
-        top: -25%;
-        transform: translate(-50%, -48%);
+        scale: .5;
+        top: -50%;
+        left: 10%;
       }
     }
 
     &::after {
       @include mq(sm){
-        background-image: url('../images/common/goddsTitle-icon01.png');
-        right: 0;
-        transform: translate(50%, -50%);
+        position: absolute;
+        content: url('../images/common/goods-and-tickets.png');
+        right: -50%;
+        top: -100%;
+        transform: translate(-50%, -50%);
+        scale: .3;
       }
     }
   }
@@ -438,6 +330,10 @@
   &__ticketBtn{
     width: 49%;
   }
+}
+
+.goodsBtn{
+  position: relative;
 }
 
 /*===================================
@@ -453,30 +349,20 @@
 }
 
 .lt-aboutArea{
-  background-image: url('../images/common/aboutBg.png');
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
   margin-top: 120px;
 
   &__another{
     &::before{
       position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(-50%, -25%);
-      content: '';
-      width: 230px;
-      height: 404px;
-      background-image: url('../images/common/about_R-icon02.png');
-      background-position: top;
-      background-repeat: no-repeat;
-      background-size: contain;
+      top: -20%;
+      left: -20%;
+      transform: translate(-50%, -50%);
+      scale: .5;
+      content: url('../images/common/190508_0022.png');
       @include mq(sm){
-        width: 150px;
-        height: 300px;
+        scale: .25;
+        // top: -10%;
+        left: -60%;
       }
     }
     &::after{
@@ -484,77 +370,138 @@
       top: 0;
       right: -25%;
       transform: translate(-25%, -35%);
-      content: '';
-      width: 230px;
-      height: 404px;
-      background-image: url('../images/common/about_R-icon01.png');
-      background-position: top;
-      background-repeat: no-repeat;
-      background-size: contain;
+      content: url('../images/common/230523_5144.png');
+      scale: 1.2;
       @include mq(sm){
-        width: 100px;
-        height: 250px;
-        right: -15%;
-        top: 30%;
+        scale: .5;
+        right: -35%;
+        top: 15%;
+        // z-index: -1;
       }
     }
 
     &--yellow{
       &::before{
         position: absolute;
-        top: 25%;
-        left: -8%;
+        top: 20%;
+        left: -15%;
         transform: translate(-50%, -25%);
-        content: '';
-        width: 230px;
-        height: 404px;
-        background-image: url('../images/common/about_K-icon02.png');
-        background-position: top;
-        background-repeat: no-repeat;
-        background-size: contain;
+        scale: .8;
+        content: url('../images/common/200910_4724.png');
+        z-index: -1;
         @include mq(sm){
-          width: 100px;
-          height: 250px;
-          top: 0;
-          left: 5%;
+          scale: .3;
+          top: -15%;
+          left: -25%;
+          z-index: 0;
         }
       }
 
 
       &::after{
         position: absolute;
-        top: 0;
+        top: -20%;
         right: -25%;
         transform: translate(-50%, -25%);
-        content: '';
-        width: 230px;
-        height: 404px;
-        background-image: url('../images/common/about_K-icon01.png');
-        background-position: top;
-        background-repeat: no-repeat;
-        background-size: contain;
+        scale: .5;
+        content: url('../images/common/200811_2683.png');
         @include mq(sm){
-          width: 100px;
-          height: 250px;
-          right: -20%;
-          top: 2%;
+          scale: .25;
+          top: -15%;
+          right: -70%;
         }
       }
 
       &--end{
         &::before{
           position: absolute;
-          bottom: 0;
-          left: -8%;
+          bottom: 15%;
+          left: -10%;
           transform: translate(-50%,50%);
-          content: '';
-          width: 230px;
-          height: 404px;
-          background-image: url('../images/common/about_K-icon03.png');
-          background-position: top;
-          background-repeat: no-repeat;
-          background-size: contain;
-          z-index: -1000;
+          content: url('../images/common/230504_3695.png');
+          @include mq(sm){
+            scale: .5;
+            bottom: -5%;
+            left: -10%;
+          }
+        }
+      }
+    }
+
+
+    &__02{
+      &::before{
+        position: absolute;
+        top: 25%;
+        left: -25%;
+        scale: .5;
+        content: url('../images/common/ball.png');
+        @include mq(sm){
+          scale: .3;
+          top: 10%;
+          left: -10%;
+        }
+      }
+      &::after{
+        position: absolute;
+        bottom: -20%;
+        left: -30%;
+        scale: .5;
+        content: url('../images/common/230530_5625.png');
+        @include mq(sm){
+          scale: .3;
+          bottom: -25%;
+        }
+      }
+    }
+    &__03{
+      &::after{
+        position: absolute;
+        bottom: -20%;
+        right: -30%;
+        scale: .5;
+        content: url('../images/common/230630_7411.png');
+        @include mq(sm){
+          scale: .3;
+          bottom: -30%;
+          right: -29%;
+        }
+      }
+    }
+    &__04{
+      &::after{
+        position: absolute;
+        bottom: 30%;
+        right: -40%;
+        scale: .5;
+        content: url('../images/common/230429_0396.png');
+      }
+    }
+    &__04{
+      &::after{
+        position: absolute;
+        bottom: 30%;
+        right: -40%;
+        scale: .5;
+        content: url('../images/common/230429_0396.png');
+        @include mq(sm){
+          scale: .3;
+          bottom: 20%;
+          right: -50%;
+        }
+      }
+    }
+    &__05{
+      &::after{
+        position: absolute;
+        bottom: -32%;
+        right: -40%;
+        scale: .5;
+        content: url('../images/common/230325_5275.png');
+        @include mq(sm){
+          scale: .3;
+          bottom: -20%;
+          right: -50%;
         }
       }
     }
@@ -567,6 +514,7 @@
 	  // outline-offset: -8px;
     padding: 54px 20px;
     border-radius: 20px;
+    // background-color: $color-white;
     background-image: url('../images/common/lt-aboutAreaR.png');
     background-position: center center;
     background-repeat: no-repeat;
@@ -598,6 +546,7 @@
 
     &.yellow{
       border: $color-yellow solid 6px;
+      background-color: $color-white;
       background-image: url('../images/common/lt-aboutAreaK.png');
     }
   }
