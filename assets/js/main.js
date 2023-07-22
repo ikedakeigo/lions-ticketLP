@@ -17,14 +17,14 @@ $(document).ready(function () {
   });
 
   var swiper2 = new Swiper(".event-slide", {
-    slidesPerView: "auto",
-    loop: true,
-    spaceBetween: 30,
-    loopAdditionalSlides: 1,
-    centeredSlides: true,
     autoplay: {
       delay: 4000,
     },
+    loop: true,
+    slidesPerView: 2.5,
+    centeredSlides: true,
+    spaceBetween: 30,
+    loopAdditionalSlides: 1,
 
     navigation: {
       nextEl: ".swiper-button-next",

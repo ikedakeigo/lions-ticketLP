@@ -167,6 +167,8 @@ section {
 .swiper-container {
   overflow: visible;
   position: relative;
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
 }
 
 .swiper-wrapper {

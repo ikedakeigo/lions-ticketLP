@@ -197,8 +197,8 @@ $color-yellow: #FFCC00;
   overflow: visible;
   position: relative;
   // overflow: hidden;
-  // margin: 0 calc(50% - 50vw); //inner要素か抜ける
-  // width: 100vw;
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
 
 }
 
